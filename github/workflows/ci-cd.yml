@@ -26,14 +26,3 @@ jobs:
 
       - name: Run tests
         run: dotnet test --no-build --verbosity normal
-
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      
