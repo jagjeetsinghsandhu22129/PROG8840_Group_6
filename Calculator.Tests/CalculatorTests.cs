@@ -38,6 +38,9 @@ public class CalculatorTests
     {
         Assert.Equal(4, SquareRoot.Eval(16));
     }
+
+   
+
     [Fact]
     public void TestAdd2()
     {
@@ -170,9 +173,54 @@ public class CalculatorTests
         Assert.Equal(1, result7);
     }
     //[Fact]
-   // public void TestDivideByZero()
+    // public void TestDivideByZero()
     //{
-      //  Assert.Throws<DivideByZeroException>(() => Divide.Eval(10L, 0L));
+    //  Assert.Throws<DivideByZeroException>(() => Divide.Eval(10L, 0L));
     //}
+
+
+
+    [Fact]
+    public void TestPercentage_ValidValues()
+    {
+        // Testing with normal values
+        Assert.Equal(20, Percentage.Eval(200, 10));  // 10% of 200 is 20
+    }
+
+    [Fact]
+    public void TestPercentage_ZeroPercent()
+    {
+        // Testing when percentage is zero
+        Assert.Equal(0, Percentage.Eval(200, 0));  // 0% of 200 is 0
+    }
+
+    [Fact]
+    public void TestPercentage_ZeroValue()
+    {
+        // Testing when value is zero
+        Assert.Equal(0, Percentage.Eval(0, 10));  // 10% of 0 is 0
+    }
+
+    [Fact]
+    public void TestPercentage_OverHundredPercent()
+    {
+        // Testing when percentage is more than 100
+        Assert.Equal(250, Percentage.Eval(200, 125));  // 125% of 200 is 250
+    }
+
+    [Fact]
+    public void TestPercentage_NegativeValue()
+    {
+        // Testing with negative values
+        Assert.Equal(-20, Percentage.Eval(-200, 10));  // 10% of -200 is -20
+    }
+
+    [Fact]
+    public void TestPercentage_NegativePercent()
+    {
+        // Testing with negative percentages
+        Assert.Equal(-20, Percentage.Eval(200, -10));  // -10% of 200 is -20
+    }
+
 
 }

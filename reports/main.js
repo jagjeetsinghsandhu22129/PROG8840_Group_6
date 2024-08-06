@@ -223,9 +223,10 @@ var assemblies = [
     "classes": [
       { "name": "Calculator.Add", "rp": "Calculator_Add.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 8, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "Calculator.Divide", "rp": "Calculator_Divide.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 11, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
-      { "name": "Calculator.Evaluator", "rp": "Calculator_Evaluator.html", "cl": 19, "ucl": 3, "cal": 22, "tl": 37, "cb": 23, "tb": 34, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
+      { "name": "Calculator.Evaluator", "rp": "Calculator_Evaluator.html", "cl": 19, "ucl": 5, "cal": 24, "tl": 43, "cb": 24, "tb": 40, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "Calculator.Modulo", "rp": "Calculator_Modulo.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 11, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "Calculator.Multiply", "rp": "Calculator_Multiply.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 8, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
+      { "name": "Calculator.Percentage", "rp": "Calculator_Percentage.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 10, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "Calculator.Power", "rp": "Calculator_Power.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 13, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "Calculator.SquareRoot", "rp": "Calculator_SquareRoot.html", "cl": 6, "ucl": 0, "cal": 6, "tl": 15, "cb": 2, "tb": 2, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "Calculator.Subtract", "rp": "Calculator_Subtract.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 11, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
@@ -245,8 +246,8 @@ var riskHotspots = [
   {
     "assembly": "Calculator", "class": "Calculator.Evaluator", "reportPath": "Calculator_Evaluator.html", "methodName": "Eval(System.String,System.Single[])", "methodShortName": "Eval(...)", "fileIndex": 0, "line": 3,
     "metrics": [
-      { "value": 36.93, "exceeded": true },
-      { "value": 34, "exceeded": true },
+      { "value": 54.48, "exceeded": true },
+      { "value": 40, "exceeded": true },
     ]},
 ];
 
