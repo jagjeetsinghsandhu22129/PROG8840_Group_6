@@ -223,4 +223,87 @@ public class CalculatorTests
     }
 
 
+    [Fact]
+    public void TestStoreValueInMemory()
+    {
+        // Arrange
+        float valueToStore = 42;
+
+        // Act
+        Evaluator.Eval("store", valueToStore);
+        float storedValue = Evaluator.Eval("recall");
+
+        // Assert
+        Assert.Equal(valueToStore, storedValue);
+    }
+
+    [Fact]
+    public void TestRecallValueFromMemory()
+    {
+        // Arrange
+        float valueToStore = 99;
+        Evaluator.Eval("store", valueToStore);
+
+        // Act
+        float recalledValue = Evaluator.Eval("recall");
+
+        // Assert
+        Assert.Equal(valueToStore, recalledValue);
+    }
+
+    [Fact]
+    public void TestClearMemory()
+    {
+        // Arrange
+        float valueToStore = 75;
+        Evaluator.Eval("store", valueToStore);
+
+        // Act
+        Evaluator.Eval("clear");
+        float recalledValueAfterClear = Evaluator.Eval("recall");
+
+        // Assert
+        Assert.Equal(0f, recalledValueAfterClear);  // Assuming default memory value is 0
+    }
+
+    [Fact]
+    public void TestStoreAndClearMemory()
+    {
+        // Arrange
+        float valueToStore = 85;
+        Evaluator.Eval("store", valueToStore);
+
+        // Act
+        Evaluator.Eval("clear");
+        float recalledValueAfterClear = Evaluator.Eval("recall");
+
+        // Assert
+        Assert.Equal(0f, recalledValueAfterClear);  // Memory should be cleared
+    }
+
+    [Fact]
+    public void TestStoreAndPerformOperation()
+    {
+        // Arrange
+        float valueToStore = 10;
+        Evaluator.Eval("store", valueToStore);
+
+        // Act
+        float result = Evaluator.Eval("+", Evaluator.Eval("recall"), 5);
+
+        // Assert
+        Assert.Equal(15, result);  // 10 (stored) + 5 = 15
+    }
+
+    [Fact]
+    public void TestRecallWithNoStoredValue()
+    {
+        // Act
+        float recalledValue = Evaluator.Eval("recall");
+
+        // Assert
+        Assert.Equal(0f, recalledValue);  // Assuming default memory value is 0
+    }
+
+
 }

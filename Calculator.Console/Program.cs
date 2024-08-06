@@ -48,6 +48,33 @@ while (!exit)
         float PercentageResult = Percentage.Eval(ValueConverted, PercentConverted);
         Console.WriteLine($"{PercentConverted}% of {ValueConverted} is {PercentageResult}");
     }
+
+    // Handle memory operations
+    else if (OptionChoice == "10") // Store in memory
+    {
+        Console.WriteLine("Enter the number to store: ");
+        string? NumberToStore = Console.ReadLine();
+
+        if (!float.TryParse(NumberToStore, out float NumberToStoreConverted))
+        {
+            Console.WriteLine("Invalid number format. Please enter a valid number.");
+            continue;
+        }
+
+        Evaluator.Eval("store", NumberToStoreConverted);
+        Console.WriteLine($"{NumberToStoreConverted} has been stored in memory.");
+    }
+    else if (OptionChoice == "11") // Recall from memory
+    {
+        float MemoryValue = Evaluator.Eval("recall");
+        Console.WriteLine($"The value stored in memory is {MemoryValue}");
+    }
+    else if (OptionChoice == "12") // Clear memory
+    {
+        Evaluator.Eval("clear");
+        Console.WriteLine("Memory has been cleared.");
+    }
+
     else // For other operations that require two numbers
     {
         Console.WriteLine("Enter number 1: ");

@@ -33,6 +33,22 @@ namespace Calculator{
                     result = Percentage.Eval(Operands[0], Operands[1]);
                     break;
 
+                case "store":
+                    if (Operands.Length != 1)
+                    {
+                        throw new ArgumentException("Store requires exactly one operand.");
+                    }
+                    Memory.Store(Operands[0]);
+                    result = Operands[0];
+                    break;
+                case "recall":
+                    result = Memory.Recall();
+                    break;
+                case "clear":
+                    Memory.Clear();
+                    result = 0;
+                    break;
+
                 default:
                     throw new Exception("unimplemented");
             }
