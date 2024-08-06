@@ -49,6 +49,14 @@ namespace Calculator{
                     result = 0;
                     break;
 
+                case "factorial":
+                    if (Operands.Length != 1)
+                    {
+                        throw new ArgumentException("Factorial requires exactly one operand.");
+                    }
+                    result = Factorial.Eval(Operands[0]);
+                    break;
+
                 default:
                     throw new Exception("unimplemented");
             }

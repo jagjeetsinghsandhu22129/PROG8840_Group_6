@@ -75,6 +75,23 @@ while (!exit)
         Console.WriteLine("Memory has been cleared.");
     }
 
+
+    else if (OptionChoice == "13") // Assuming 13 is the choice for factorial
+    {
+        Console.WriteLine("Enter number: ");
+        string? Number = Console.ReadLine();
+
+        if (!float.TryParse(Number, out float NumberConverted) || NumberConverted < 0 || NumberConverted != (int)NumberConverted)
+        {
+            Console.WriteLine("Invalid number format. Please enter a non-negative integer.");
+            continue;
+        }
+
+        float FactorialResult = Evaluator.Eval("factorial", NumberConverted);
+        Console.WriteLine($"The factorial of {NumberConverted} is {FactorialResult}");
+    }
+
+
     else // For other operations that require two numbers
     {
         Console.WriteLine("Enter number 1: ");
@@ -129,6 +146,7 @@ while (!exit)
                 float Power = Evaluator.Eval("^", Number1Converted, Number2Converted);
                 Console.WriteLine($"{Number1Converted} ^ {Number2Converted} = {Power}");
                 break;
+
             default:
                 Console.WriteLine("Unimplemented option. Please enter a valid option.");
                 break;

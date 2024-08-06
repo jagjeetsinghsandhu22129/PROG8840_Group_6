@@ -305,5 +305,52 @@ public class CalculatorTests
         Assert.Equal(0f, recalledValue);  // Assuming default memory value is 0
     }
 
+    public class FactorialTests
+    {
+        [Fact]
+        public void TestFactorial_Zero()
+        {
+            // Test factorial of 0, which should be 1
+            Assert.Equal(1f, Factorial.Eval(0));
+        }
+
+        [Fact]
+        public void TestFactorial_One()
+        {
+            // Test factorial of 1, which should be 1
+            Assert.Equal(1f, Factorial.Eval(1));
+        }
+
+        [Fact]
+        public void TestFactorial_Two()
+        {
+            // Test factorial of 2, which should be 2
+            Assert.Equal(2f, Factorial.Eval(2));
+        }
+
+        [Fact]
+        public void TestFactorial_Five()
+        {
+            // Test factorial of 5, which should be 120
+            Assert.Equal(120f, Factorial.Eval(5));
+        }
+
+        [Fact]
+        public void TestFactorial_Ten()
+        {
+            // Test factorial of 10, which should be 3628800
+            Assert.Equal(3628800f, Factorial.Eval(10));
+        }
+
+        [Fact]
+        public void TestFactorial_NegativeNumber()
+        {
+            // Test factorial of a negative number, should throw ArgumentException
+            Assert.Throws<ArgumentException>(() => Factorial.Eval(-1));
+        }
+
+       
+    }
+
 
 }
