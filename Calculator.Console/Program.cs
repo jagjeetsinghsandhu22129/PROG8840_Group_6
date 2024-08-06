@@ -17,12 +17,11 @@ while (!exit)
     }
 
     // For square root, only one number is needed
-    Console.WriteLine("Enter number 1: ");
-    string? Number1 = Console.ReadLine();
-
-    // Check for square root operation
     if (OptionChoice == "8") // Assuming 8 is the choice for square root
     {
+        Console.WriteLine("Enter number 1: ");
+        string? Number1 = Console.ReadLine();
+
         if (!float.TryParse(Number1, out float Number1Converted))
         {
             Console.WriteLine("Invalid number format. Please enter a valid number.");
@@ -32,8 +31,28 @@ while (!exit)
         float SqrtResult = Evaluator.Eval("sqrt", Number1Converted);
         Console.WriteLine($"The square root of {Number1Converted} is {SqrtResult}");
     }
-    else
+    else if (OptionChoice == "9") // Handle percentage calculation
     {
+        Console.WriteLine("Enter the value: ");
+        string? ValueInput = Console.ReadLine();
+
+        Console.WriteLine("Enter the percentage: ");
+        string? PercentInput = Console.ReadLine();
+
+        if (!float.TryParse(ValueInput, out float ValueConverted) || !float.TryParse(PercentInput, out float PercentConverted))
+        {
+            Console.WriteLine("Invalid number format. Please enter valid numbers.");
+            continue;
+        }
+
+        float PercentageResult = Percentage.Eval(ValueConverted, PercentConverted);
+        Console.WriteLine($"{PercentConverted}% of {ValueConverted} is {PercentageResult}");
+    }
+    else // For other operations that require two numbers
+    {
+        Console.WriteLine("Enter number 1: ");
+        string? Number1 = Console.ReadLine();
+
         Console.WriteLine("Enter number 2: ");
         string? Number2 = Console.ReadLine();
 

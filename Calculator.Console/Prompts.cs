@@ -14,6 +14,7 @@ public class Prompts{
         Console.WriteLine("6. Modulo");
         Console.WriteLine("7. Power");
         Console.WriteLine("8. SquareRoot");
+        Console.WriteLine("9: Calculate Percentage");
     }
 
 }

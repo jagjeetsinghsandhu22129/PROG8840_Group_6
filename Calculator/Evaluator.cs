@@ -28,10 +28,16 @@ namespace Calculator{
                     }
                     result = SquareRoot.Eval(Operands[0]);
                     break;
+
+                case "per":
+                    result = Percentage.Eval(Operands[0], Operands[1]);
+                    break;
+
                 default:
                     throw new Exception("unimplemented");
             }
             return result;
         }
     }
+
 }
